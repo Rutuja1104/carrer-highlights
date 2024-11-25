@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
+body {
+  background: rgb(2,0,36);
+background: linear-gradient(173deg,rgb(5, 5, 82) 0%, rgba(2,0,36,1) 35%, rgba(2,0,36,1) 100%);  background-size: cover; /* Ensures it covers the entire viewport */
+  width: 100%;
+  height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.aboutContainer .ImgContainer{
+  width: 100%;
+  height: 100%;
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.containerinfo{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.ImgCoder{
+  width: 150%;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.skillContainerInfo{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
+@media screen and (max-width:1500px){
+  .containerinfo{
+    flex-direction: column !important;  
+  }
+  .ImgCoder{
+    display: none;
+  }
+} 
+
+👏
+👍
+😊
+
+
+
+.sightseeing-div .sightseeing-title {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+ margin-bottom: 5%;
+ font-size: 176%;
+ font-weight: 500;
+ margin-top: 12%;
+}
+
+.sightseeing-div .sightseeing-title::before,
+.sightseeing-div .sightseeing-title::after {
+ content: "";
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ width: 100%;
+ margin: 0 10px;
+ height: 6px;
+}
+
+.sightseeing-div .sightseeing-title::before {
+ border-top: 2px solid white;
+ border-bottom: 2px solid white;
+}
+
+.sightseeing-div .sightseeing-title::after {
+ border-top: 2px solid white;
+
+ border-bottom: 2px solid white;
+}
+
+.sightseeing-div .sightseeing-title span {
+ display: inline-block;
+}
+
+.SkillsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: space-evenly;
+}
+.skill {
+  width: calc(20% - 50px); /* 2 items per row, adjusted for gap */
+  box-sizing: border-box;  /* Ensures padding/gap are taken into account */
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #fff; /* Optional, to make background visible */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  border-radius: 8px; /* Optional, rounded corners */
+  -webkit-box-shadow: 11px 6px 18px 5px rgb(0, 172, 240);
+-moz-box-shadow: 11px 6px 18px 5px rgb(0, 172, 240);
+box-shadow: 11px 6px 18px 5px rgb(0, 172, 240);
+}
+
+/* Hover effect with subtle rotation and scaling */
+.skill:hover {
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12) !important;
+  transform: rotateY(10deg) scale(1.05); /* Slight 3D rotation and scaling */
+  box-shadow: 0 8px 15px rgba(192, 155, 187, 0.2); /* Soft shadow on hover */
+}
+
+@media screen and (max-width:1078px) and (min-width:500px){
+  .skill {
+    width: calc(50% - 50px) !important;
+  }
+.ProjectContainer{
+  flex-direction: row !important;
+}
+.projectCard{
+  width: 70% !important;
+}
+}
+
+@media screen and (max-width:500px){
+  .skill {
+    width: calc(80% - 10px) !important;
+  }
+  .ProjectContainer{
+    flex-direction: column !important;
+  }
+  .projectCard{
+    width: 100% !important;
+  }
+  
+}
+@keyframes rotateSkill {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
     transform: rotate(360deg);
   }
+}
+.ProjectContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: space-evenly;
+}
+
+.projectCard{
+  width: 30%;
+  -webkit-box-shadow: 11px 6px 18px 15px rgba(250,40,250,0.71);
+-moz-box-shadow: 11px 6px 18px 15px rgba(250,40,250,0.71);
+box-shadow: 11px 6px 18px 15px rgba(250,40,250,0.71);
+}
+
+.hover-zoom {
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.hover-zoom:hover {
+  transform: scale(1.2); /* Zoom in */
 }
