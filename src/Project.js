@@ -5,12 +5,12 @@ import img2 from "./Images/car.jpg";
 import img3 from "./Images/Travel.jpg";
 const Project = () => {
   return (
-    <div className="text-white m-4">
+    <div className="text-white m-4 mb-5">
       <Heading tittle={"Projects"} />
       {/* <div className=''>
           <img src={img1}class="card-img-top" alt="..."/>
         </div> */}
-      <div className="ProjectContainer mt-5 ">
+      <div className="ProjectContainer mt-5 mb-5">
         <div class="projectCard card" >
           <img src={img1} class="card-img-top" alt="Cakes" />
           <div class="card-body">
