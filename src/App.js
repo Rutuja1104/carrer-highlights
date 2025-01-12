@@ -5,6 +5,7 @@ import About from './About';
 import Skills from './Skills';
 import Project from './Project';
 import Contact from "./Contact";
+import ExperienceCard from "./Experience";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       </section>
       <section id="projects">
         <Project />
+      </section>
+      <section id="Experience">
+        <ExperienceCard/>
       </section>
       <section id="Contact">
         <Contact />
