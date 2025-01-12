@@ -1,0 +1,6 @@
+.experCard {
+    box-shadow: 11px 6px 18px 15px rgba(250, 40, 250, 0.71);
+    -webkit-box-shadow: 11px 6px 18px 15px rgba(250, 40, 250, 0.71);
+    -moz-box-shadow: 11px 6px 18px 15px rgba(250, 40, 250, 0.71);
+    cursor: pointer;
+}
