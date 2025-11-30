@@ -49,7 +49,7 @@ const Achievements = () => {
                   height="48"
                   alt="GeeksforGeeks logo"
                   id="ember391"
-                  class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view"
+                  className="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view"
                 />
                 <h5 className="card-title mt-2 ml-4">GeeksforGeeks</h5>
               </div>
@@ -77,7 +77,7 @@ const Achievements = () => {
           <div className="card shadow-sm experCard"onClick={handleShowModal3}>
             <div className="card-body">
             <div className="d-flex flex-row">
-            <img width="48" src={cutshortImg} loading="lazy" height="48" alt="Cutshort logo" id="ember403" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view"/>
+            <img width="48" src={cutshortImg} loading="lazy" height="48" alt="Cutshort logo" id="ember403" className="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view"/>
                 <h5 className="card-title mt-2 ml-4">React JS - Cutshort</h5>
               </div>
               <p className="card-text mb-3">Skills: REACT.JS, SASS</p>

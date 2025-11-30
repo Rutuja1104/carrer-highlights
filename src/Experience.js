@@ -1,274 +1,220 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaGlobe, FaCircle } from "react-icons/fa";
+import { Modal, Accordion } from "react-bootstrap";
 import Heading from "./Heading";
-import { Modal, Button, Accordion } from "react-bootstrap";
 import img from "./Images/311144920_1480995738980015_2241055878350119737_n.jpg";
+import img1 from "./Images/softtechengineersltd_logo.jpg";
 
 const ExperienceCard = () => {
-  const [showE, setShowE] = useState(false);
-  const handleCloseE = () => setShowE(false);
-  const handleShowE = () => setShowE(true);
-  const [showE1, setShowE1] = useState(false);
-  const handleCloseE1 = () => setShowE1(false);
-  const handleShowE1 = () => setShowE1(true);
-  const [showE2, setShowE2] = useState(false);
-  const handleCloseE2 = () => setShowE2(false);
-  const handleShowE2 = () => setShowE2(true);
+  const [modalData, setModalData] = useState({
+    show: false,
+    title: "",
+    companyImg: "",
+    skills: []
+  });
+
+  const openModal = (title, companyImg, skills) => {
+    setModalData({
+      show: true,
+      title,
+      companyImg,
+      skills
+    });
+  };
+
+  const closeModal = () => {
+    setModalData({ ...modalData, show: false });
+  };
+
+  // -----------------------------
+  // SKILL ARRAYS
+  // -----------------------------
+  const SoftTechSkills = [
+    { title: "nx monorepo", description: "Worked with nx monorepo for scalable multi-project architecture." },
+    { title: "React.js", description: "Developed responsive interfaces with React.js." },
+    { title: "Internet Information Services (IIS)", description: "Maintained and deployed apps using IIS." },
+    { title: "Cypress", description: "Automated UI testing using Cypress." },
+  ];
 
   const E1skills = [
-    {
-      title: "JavaScript",
-      description:
-        "Developed dynamic and interactive web applications using JavaScript.",
-    },
-    {
-      title: "WebSocket connection in React",
-      description:
-        "Implemented real-time data communication in React apps using WebSocket.",
-    },
-    {
-      title: "SASS",
-      description:
-        "Styled web applications with modular and maintainable SASS.",
-    },
-    {
-      title: "Webpack",
-      description:
-        "Configured Webpack for optimized bundling and performance enhancement.",
-    },
-    {
-      title: "Sentry",
-      description:
-        "Integrated Sentry for real-time error monitoring and debugging.",
-    },
-    {
-      title: "Chrome Extensions",
-      description:
-        "Built and deployed browser extensions to enhance EHR workflows.",
-    },
-    {
-      title: "Electron.js",
-      description: "Developed cross-platform desktop apps with Electron.js.",
-    },
-    {
-      title: "React.js",
-      description:
-        "Built responsive and high-performance user interfaces with React.js.",
-    },
-    {
-      title: "Git",
-      description: "Version control and collaboration using Git.",
-    },
+    { title: "JavaScript", description: "Developed dynamic and interactive web applications using JavaScript." },
+    { title: "WebSocket in React", description: "Implemented real-time communication using WebSocket." },
+    { title: "SASS", description: "Styled modular and maintainable pages using SASS." },
+    { title: "Webpack", description: "Configured Webpack for optimized bundling." },
+    { title: "Sentry", description: "Integrated Sentry for real-time error monitoring." },
+    { title: "Chrome Extensions", description: "Developed custom Chrome browser extensions." },
+    { title: "Electron.js", description: "Built cross-platform desktop apps with Electron." },
+    { title: "React.js", description: "Built responsive interfaces using React.js." },
+    { title: "Git", description: "Collaborated using Git version control." }
   ];
 
   const E2skills = [
-    { title: "Sentry", description: "Integrated Sentry for real-time error monitoring and debugging." },
-  { title: "TypeScript", description: "Developed scalable and type-safe applications using TypeScript." },
-  { title: "Redux", description: "Managed complex application state with Redux for predictable state management." },
-  { title: "Redux-Saga", description: "Handled side effects and asynchronous actions in Redux using Redux-Saga." },
-  { title: "Material-UI", description: "Designed modern and responsive UIs with Material-UI components." },
-  { title: "Tailwind CSS", description: "Created highly responsive and customizable designs using Tailwind CSS." }
+    { title: "Sentry", description: "Integrated Sentry for real-time error monitoring." },
+    { title: "TypeScript", description: "Built scalable apps using TypeScript." },
+    { title: "Redux", description: "Managed global state with Redux." },
+    { title: "Redux-Saga", description: "Handled async logic using Redux-Saga." },
+    { title: "Material UI", description: "Built intuitive UI with Material UI." },
+    { title: "Tailwind CSS", description: "Designed responsive layouts using Tailwind CSS." },
   ];
 
   const Eskills = [
-    {
-      title: "JavaScript",
-      description:
-        "Developed dynamic and interactive web applications using JavaScript.",
-    },
-    {
-      title: "HTML",
-      description:
-        "Implemented real-time data communication in React apps using WebSocket.",
-    },
-    {
-      title: "CSS",
-      description:
-        "Styled web applications with modular and maintainable SASS.",
-    },
-    {
-      title: "jQuery",
-      description:
-        "Enhanced web pages with dynamic features and simplified DOM manipulation using jQuery.",
-    },
-    {
-      title: "NiFi",
-      description:
-        "Automated data flow pipelines and integrated systems using Apache NiFi.",
-    },
-    {
-      title: "Mirth",
-      description:
-        "Managed healthcare data exchange with Mirth Connect integration.",
-    },
-    {
-      title: "PostgreSQL",
-      description:
-        "Designed and optimized relational databases using PostgreSQL.",
-    },
+    { title: "JavaScript", description: "Developed dynamic pages using JavaScript." },
+    { title: "HTML", description: "Structured web pages using HTML." },
+    { title: "CSS", description: "Styled modern layouts using CSS." },
+    { title: "jQuery", description: "Simplified DOM manipulation using jQuery." },
+    { title: "NiFi", description: "Automated workflows using Apache NiFi." },
+    { title: "Mirth", description: "Handled HL7 and healthcare integration using Mirth Connect." },
+    { title: "PostgreSQL", description: "Managed databases using PostgreSQL." }
   ];
 
   return (
     <div className="text-white m-4 mb-5">
       <Heading tittle={"Experience"} />
-      <div
-        className="container my-4 text-white bg-transparent"
-        style={{ width: "50%" }}
-      >
+
+      <div className="container my-4 text-white bg-transparent" style={{ width: "50%" }}>
+        
+        {/* ------------------------------------ */}
+        {/*    SOFTTECH ENGINEERS                */}
+        {/* ------------------------------------ */}
         <div className="card p-3 text-white bg-transparent">
+          <div className="d-flex flex-row">
+            <img className="companyImg mr-3" align="right" src={img1} />
+            <h4>SoftTech Engineers Ltd</h4>
+          </div>
+
+          <p className="text-secondary">Full-time · 1 yr 2 mos | On-site</p>
+          <div className="border-start ps-3">
+            <div className="mb-4">
+              <h5>Associate</h5>
+              <p className="text-secondary">Dec 2024 - Present | Pune, Maharashtra, India</p>
+
+              <p
+                className="skillCompany"
+                onClick={() =>
+                  openModal(
+                    "Skills for Associate at SoftTech Engineers Ltd",
+                    img1,
+                    SoftTechSkills
+                  )
+                }
+              >
+                <strong>Skills:</strong> nx monorepo, React.js and +2 more
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ------------------------------------ */}
+        {/*    THINKITIVE TECHNOLOGIES           */}
+        {/* ------------------------------------ */}
+        <div className="card p-3 text-white bg-transparent mt-4">
           <div className="d-flex flex-row">
             <img className="companyImg mr-3" align="right" src={img} />
             <h4>Thinkitive Technologies</h4>
           </div>
 
           <p className="text-secondary">Full-time · 2 yrs 2 mos | On-site</p>
+
           <div className="border-start ps-3">
-            {/* Software Engineer E2 */}
+
+            {/* E2 */}
             <div className="mb-4">
               <h5>Software Engineer E2</h5>
-              <p className="text-secondary">
-                Oct 2023 - Nov 2024 · 1 yr 2 mos | Pune, Maharashtra, India
-              </p>
-              <p className="skillCompany" onClick={handleShowE2} >
-                <strong>Skills:</strong> Sentry, TypeScript and +4 skills
+              <p className="text-secondary">Oct 2023 - Nov 2024 · 1 yr 2 mos | Pune</p>
+
+              <p
+                className="skillCompany"
+                onClick={() =>
+                  openModal(
+                    "Skills for Software Engineer E2 at Thinkitive",
+                    img,
+                    E2skills
+                  )
+                }
+              >
+                <strong>Skills:</strong> Sentry, TypeScript and +4 more
               </p>
             </div>
-            {/* Software Engineer E1 */}
+
+            {/* E1 */}
             <div className="mb-4">
               <h5>Software Engineer E1</h5>
-              <p className="text-secondary">
-                Apr 2023 - Oct 2023 · 7 mos | Pune, Maharashtra, India
-              </p>
+              <p className="text-secondary">Apr 2023 - Oct 2023 · 7 mos | Pune</p>
+
               <ul>
-                <li>
-                  Proficient in building dynamic and responsive web applications
-                  using React.js.
-                </li>
-                <li>
-                  Experienced in managing WebSocket connections for real-time
-                  communication.
-                </li>
-                <li>
-                  Well-versed in Webpack for bundling and asset management.
-                </li>
-                <li>Utilized Sentry for proactive error tracking.</li>
-                <li>
-                  Skilled in cross-platform app development using Electron.js.
-                </li>
-                <li>Expertise in developing Chrome extensions.</li>
+                <li>Built responsive web apps using React.js.</li>
+                <li>Implemented WebSocket for real-time updates.</li>
+                <li>Configured webpack for optimized bundles.</li>
+                <li>Used Sentry for proactive debugging.</li>
+                <li>Created Chrome extensions.</li>
+                <li>Developed Electron.js apps.</li>
               </ul>
-              <p onClick={handleShowE1} className="skillCompany">
-                <strong>Skills:</strong> JavaScript, WebSocket in React and +7
-                skills
+
+              <p
+                className="skillCompany"
+                onClick={() =>
+                  openModal(
+                    "Skills for Software Engineer E1 at Thinkitive",
+                    img,
+                    E1skills
+                  )
+                }
+              >
+                <strong>Skills:</strong> JavaScript, WebSocket and +7 more
               </p>
             </div>
-            {/* Trainee Software Engineer */}
+
+            {/* Trainee */}
             <div>
               <h5>Trainee Software Engineer</h5>
-              <p className="text-secondary">
-                Oct 2022 - Apr 2023 · 7 mos | Pune, Maharashtra, India
-              </p>
+              <p className="text-secondary">Oct 2022 - Apr 2023 · 7 mos | Pune</p>
+
               <ul>
-                <li>Built modern frontend applications with React.js.</li>
-                <li>
-                  Proficient in Mirth and Apache NiFi for data flow integration.
-                </li>
-                <li>Skilled in PostgreSQL database management.</li>
-                <li>
-                  Solid foundation in HTML and CSS for web structuring and
-                  styling.
-                </li>
+                <li>Developed frontend using React.js.</li>
+                <li>Worked with NiFi and Mirth.</li>
+                <li>Managed PostgreSQL databases.</li>
+                <li>Built pages using HTML & CSS.</li>
               </ul>
-              <p className="skillCompany" onClick={handleShowE}>
-                <strong>Skills:</strong> HTML, CSS and +6 skills
+
+              <p
+                className="skillCompany"
+                onClick={() =>
+                  openModal(
+                    "Skills for Trainee Software Engineer at Thinkitive",
+                    img,
+                    Eskills
+                  )
+                }
+              >
+                <strong>Skills:</strong> HTML, CSS and +6 more
               </p>
             </div>
           </div>
         </div>
       </div>
-      <Modal show={showE1} onHide={handleCloseE1} size="lg" centered>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            Skills for Software Engineer E1 at Thinkitive Technologies Pvt. Ltd.
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Accordion defaultActiveKey="0">
-            {E1skills.map((skill, index) => (
-              <Accordion.Item eventKey={index.toString()} key={index}>
-                <Accordion.Header>{skill.title}</Accordion.Header>
-                <Accordion.Body>
-                  <div className="d-flex flex-row">
-                    <img className="companyImg mr-3" align="right" src={img} />
-                    {skill.description}.
-                  </div>
-                </Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer> */}
-      </Modal>
 
-      <Modal show={showE2} onHide={handleCloseE2} size="lg" centered>
+      {/* ----------------------------- */}
+      {/*        REUSABLE MODAL         */}
+      {/* ----------------------------- */}
+      <Modal show={modalData.show} onHide={closeModal} size="lg" centered>
         <Modal.Header closeButton>
-          <Modal.Title>
-            Skills for Software Engineer E2 at Thinkitive Technologies Pvt. Ltd.
-          </Modal.Title>
+          <Modal.Title>{modalData.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Accordion defaultActiveKey="0">
-            {E2skills.map((skill, index) => (
+          <Accordion>
+            {modalData.skills.map((skill, index) => (
               <Accordion.Item eventKey={index.toString()} key={index}>
                 <Accordion.Header>{skill.title}</Accordion.Header>
                 <Accordion.Body>
                   <div className="d-flex flex-row">
-                    <img className="companyImg mr-3" align="right" src={img} />
-                    {skill.description}.
+                    <img className="companyImg mr-3" src={modalData.companyImg} />
+                    {skill.description}
                   </div>
                 </Accordion.Body>
               </Accordion.Item>
             ))}
           </Accordion>
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer> */}
-      </Modal>
-
-      <Modal show={showE} onHide={handleCloseE} size="lg" centered>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            Skills for Trainee Software Engineer at Thinkitive Technologies
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Accordion defaultActiveKey="0">
-            {Eskills.map((skill, index) => (
-              <Accordion.Item eventKey={index.toString()} key={index}>
-                <Accordion.Header>{skill.title}</Accordion.Header>
-                <Accordion.Body>
-                  <div className="d-flex flex-row">
-                    <img className="companyImg mr-3" align="right" src={img} />
-                    {skill.description}.
-                  </div>
-                </Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer> */}
       </Modal>
     </div>
   );

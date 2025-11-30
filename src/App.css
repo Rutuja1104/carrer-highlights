@@ -197,3 +197,7 @@ text-decoration: underline;
   width: 5%;
   height: 5%;
 }
+
+.card-img-top{
+  height: 291px;
+}
