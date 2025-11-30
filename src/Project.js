@@ -4,6 +4,7 @@ import img1 from "./Images/cakes.avif";
 import img2 from "./Images/car.jpg";
 import img3 from "./Images/Travel.jpg";
 import AtsImg from "./Images/ats.png";
+import { HiClipboardDocumentList } from "react-icons/hi2";
 
 const Project = () => {
   return (
@@ -16,7 +17,7 @@ const Project = () => {
         <div className="projectCard card" >
           <img src={AtsImg} className="card-img-top" alt="Ats Smart Resume Tracker" />
           <div className="card-body">
-            <h3 className="card-title text-dark"> AI Smart Resume Tracker</h3>
+            <h3 className="card-title text-dark"> <HiClipboardDocumentList color="#4F46E5" size={30}/> AI Smart Resume Tracker</h3>
             {/* <h4 className="card-text text-dark" >🍰 Cake Cravers Application</h4> */}
             <a
               href="https://rutuja1104.github.io/Resume.Trackr.ai/"
@@ -31,7 +32,7 @@ const Project = () => {
         <div className="projectCard card" >
           <img src={img1} className="card-img-top" alt="Cakes" />
           <div className="card-body">
-            <h3 className="card-title text-dark">🍰 CAKE CRAVERS APPLICATIONS</h3>
+            <h3 className="card-title text-dark">🍰 Cake Cravers Application</h3>
             {/* <h4 className="card-text text-dark" >🍰 Cake Cravers Application</h4> */}
             <a
               href="https://rutuja1104.github.io/OnlineCakeShop/"
@@ -46,7 +47,7 @@ const Project = () => {
         <div className="projectCard card" >
           <img src={img2} className="card-img-top" alt="Cakes" />
           <div className="card-body">
-            <h3 className="card-title text-dark">🌍 EV INSIGHT HUB</h3>
+            <h3 className="card-title text-dark">🌍 EV Insight Hub</h3>
             {/* <h4 className="card-text text-dark" >🍰 Cake Cravers Application</h4> */}
             <a
               href="https://github.com/Rutuja1104/EV-INSIGHT-HUB"
