@@ -6,6 +6,9 @@ import { Button, Modal } from "react-bootstrap";
 import img3 from './Images/image.png'
 import img1 from './Images/Geek.png'
 import img2 from './Images/peta.png'
+import geeksImg from './Images/geeksforgeeks_logo.jpg'
+import pentagonImg from './Images/pentagonspace_logo.jpg'
+import cutshortImg from './Images/1692192268681.jpg'
 
 const Achievements = () => {
     const [showModal1, setShowModal1] = useState(false);
@@ -41,13 +44,13 @@ const Achievements = () => {
               <div className="d-flex flex-row">
                 <img
                   width="48"
-                  src="https://media.licdn.com/dms/image/v2/D560BAQFEl-c-MprDFQ/company-logo_100_100/company-logo_100_100/0/1735198653833/geeksforgeeks_logo?e=1744848000&amp;v=beta&amp;t=VsYQPQI0v5MyTY9NwrGGq90eGUfjC6SrV_8fGeX8Lvc"
+                  src={geeksImg}
                   loading="lazy"
                   height="48"
                   alt="GeeksforGeeks logo"
                   id="ember391"
                   class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view"
-                ></img>
+                />
                 <h5 className="card-title mt-2 ml-4">GeeksforGeeks</h5>
               </div>
               <p className="card-text mb-3">
@@ -61,7 +64,7 @@ const Achievements = () => {
           <div className="card shadow-sm experCard" onClick={handleShowModal2}>
             <div className="card-body">
               <div className="d-flex flex-row">
-              <img width="48" src="https://media.licdn.com/dms/image/v2/C560BAQFIJsObZ0deWA/company-logo_100_100/company-logo_100_100/0/1662104190317/pentagonspace_logo?e=1744848000&amp;v=beta&amp;t=OQ7INl2deflFHyBTtpAPgnhnUX4VMrFV_TkmAqd9UL8" loading="lazy" height="48" alt="Pentagon Space logo" id="ember397" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view"/>
+              <img width="48" src={pentagonImg}/>
                 <h5 className="card-title mt-2 ml-4">Pentagon Space</h5>
               </div>
               <p className="card-text mb-3">
@@ -74,7 +77,7 @@ const Achievements = () => {
           <div className="card shadow-sm experCard"onClick={handleShowModal3}>
             <div className="card-body">
             <div className="d-flex flex-row">
-            <img width="48" src="https://media.licdn.com/dms/image/v2/D4D0BAQEQIEKSYW75kg/company-logo_100_100/company-logo_100_100/0/1692192268681?e=1744848000&amp;v=beta&amp;t=8jPVmUlGbsaqwVJHe87InyHsqG2Guv83z6RN3kBABb4" loading="lazy" height="48" alt="Cutshort logo" id="ember403" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view"/>
+            <img width="48" src={cutshortImg} loading="lazy" height="48" alt="Cutshort logo" id="ember403" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view"/>
                 <h5 className="card-title mt-2 ml-4">React JS - Cutshort</h5>
               </div>
               <p className="card-text mb-3">Skills: REACT.JS, SASS</p>
