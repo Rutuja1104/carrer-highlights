@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/carrer-highlights/static/css/main.fd00b0fd.css",
-    "main.js": "/carrer-highlights/static/js/main.c27cbfaf.js",
-    "static/js/453.ca70eec1.chunk.js": "/carrer-highlights/static/js/453.ca70eec1.chunk.js",
+    "main.css": "/carrer-highlights/static/css/main.cf18a139.css",
+    "main.js": "/carrer-highlights/static/js/main.518e30d3.js",
+    "static/js/453.5b0ac553.chunk.js": "/carrer-highlights/static/js/453.5b0ac553.chunk.js",
     "static/media/peta.png": "/carrer-highlights/static/media/peta.932a60d0e1ee2a1c18f2.png",
     "static/media/image.png": "/carrer-highlights/static/media/image.5c309cf2cd0a323c4a2b.png",
     "static/media/Geek.png": "/carrer-highlights/static/media/Geek.7fc91d2a948ee6bd75c3.png",
+    "static/media/ats.png": "/carrer-highlights/static/media/ats.4f8784f94b4501476e7e.png",
     "static/media/cakes.avif": "/carrer-highlights/static/media/cakes.5d1e029e2c3e5f041c31.avif",
     "static/media/car.jpg": "/carrer-highlights/static/media/car.68afa9c2a7a833c3ad18.jpg",
     "static/media/Travel.jpg": "/carrer-highlights/static/media/Travel.6d5fbece366131f0a589.jpg",
     "index.html": "/carrer-highlights/index.html",
-    "main.fd00b0fd.css.map": "/carrer-highlights/static/css/main.fd00b0fd.css.map",
-    "main.c27cbfaf.js.map": "/carrer-highlights/static/js/main.c27cbfaf.js.map",
-    "453.ca70eec1.chunk.js.map": "/carrer-highlights/static/js/453.ca70eec1.chunk.js.map"
+    "main.cf18a139.css.map": "/carrer-highlights/static/css/main.cf18a139.css.map",
+    "main.518e30d3.js.map": "/carrer-highlights/static/js/main.518e30d3.js.map",
+    "453.5b0ac553.chunk.js.map": "/carrer-highlights/static/js/453.5b0ac553.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd00b0fd.css",
-    "static/js/main.c27cbfaf.js"
+    "static/css/main.cf18a139.css",
+    "static/js/main.518e30d3.js"
   ]
 }
